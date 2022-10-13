@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/globalStyles.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/styles/display.css"/>
+    <link rel="stylesheet" href="/styles/buttons.css"/>
+    <link rel="stylesheet" href="/styles/spacing.css"/>
+    <link rel="stylesheet" href="/styles/texts.css" />
+    <link rel="stylesheet" href="/styles/globalStyles.css"/>
     <link rel="stylesheet" href="index.css" />
-    <title>Git Search</title>
+    <title>Nome do usuário Github</title>
   </head>
   <body>
-    <main></main>
+    <header class="header container flex-row justify-between align-center">
+      <div class="header-div-1 flex-row align-center">
+        <span>X</span>
+        <div class="header-div-1-div">
+          <h2 class="header-user">Lucca Haddad</h2>
+          <span class="header-job">Front-end Developer</span>
+        </div>
+      </div>
+      <div class="header-div-2 flex-row">
+        <button class="header-btn-1">Email</button>
+        <button class="header-btn-2">Trocar de usuário</button>
+      </div>
+    </header>
+    <main class="main container">
+      <ul class="list-full flex-row flex-wrap">
+        <li class="list-card flex-col align-start">
+          <h2 class="card-title">Project Module 2</h2>
+          <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum massa ipsum, et finibus dui fringilla eu. Etiam tempus quam vel mollis elementum.</p>
+          <div class="card-div flex-row">
+            <button class="card-btn-1">Repositório</button>
+            <button class="card-btn-2">Demo</button>
+          </div>
+        </li>
+        <li class="list-card flex-col align-start">
+          <h2 class="card-title">Project Module 2</h2>
+          <p class="card-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum massa ipsum, et finibus dui fringilla eu. Etiam tempus quam vel mollis elementum.</p>
+          <div class="card-div flex-row">
+            <button class="card-btn-1">Repositório</button>
+            <button class="card-btn-2">Demo</button>
+          </div>
+        </li>
+      </ul>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>

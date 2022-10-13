@@ -1,0 +1,35 @@
+.button-login{
+    width: 314px;
+    height: 38px;
+    padding: 10px 93px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-1);
+    background-color: var(--color-brand-2);
+}
+
+.button-header-1{
+    width: 84px;
+    height: 38px;
+    padding: 10px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-2);
+    background-color: var(--color-brand-1);
+}
+
+.button-header-2{
+    width: 169px;
+    height: 38px;
+    padding: 10px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-2);
+    background-color: var(--color-grey-3);
+}
+
+.button-card{
+    height: 28px;
+    width: fit-content;
+    padding: 0px, 8px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-1);
+    background-color: var(--color-grey-3);
+}

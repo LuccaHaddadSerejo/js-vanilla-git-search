@@ -1,0 +1,30 @@
+.title-2{
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-2);
+    line-height: 24px;
+    color: var(--color-grey-7); 
+}
+
+.text-1{
+    font-weight: 600;
+    font-size: var(--font-size-1);
+    line-height: 0px;
+    color: var(--color-grey-7);   
+}
+
+.text-2{
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-1);
+    line-height: 17px;
+    color: var(--color-grey-7); 
+}
+
+.text-4{
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-1);
+}
+
+.text-5{
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-1);
+}

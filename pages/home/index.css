@@ -1,1 +1,145 @@
-/* Desenvolva sua estilização aqui...*/
+body{
+    background-color: var(--color-grey-2);
+}
+
+.header{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.header-div-1{
+    gap: 20px;
+}
+
+.header-div-1-div{
+
+}
+
+.header-user{
+    margin-bottom: 14px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 29px;
+    color: var(--color-grey-7);
+}
+
+.header-job{
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-1);
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.header-div-2{
+    gap: 14px;
+    position: relative;
+    right: 36px;
+}
+
+.header-btn-1{
+    width: 84px;
+    height: 38px;
+    background-color: var(--color-brand-2);
+    border-radius: var(--radius-2);
+    border: none;
+    color: var(--color-grey-7);
+    cursor: pointer;
+}
+
+.header-btn-1:hover{
+    background-color: var(--color-brand-1);
+    border-color: var(--color-brand-1);;
+}
+
+.header-btn-2{
+    width: 169px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: var(--radius-2);
+    color: var(--color-grey-7);
+    cursor: pointer;
+}
+
+.header-btn-2:hover{
+    background-color: var(--color-brand-2);
+    border-color: var(--color-brand-2);
+}
+    
+.main{
+
+}
+
+.list-full{
+}
+
+.list-card{
+    list-style: none;
+    width: 47%;
+    height: 250px;
+    padding: 40px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-2);
+    margin-right: 22px;
+    margin-bottom: 22px;
+}
+
+.list-card:hover{
+    border-color: var(--color-grey-7);
+}
+
+.card-title{
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-2);
+    line-height: 24px;
+    color: var(--color-grey-7);
+    margin-bottom: 21px;
+}
+
+.card-paragraph{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 27px;
+}
+
+.card-div{
+    gap: 22px;
+}
+
+.card-btn-1{
+    width: 93px;
+    height: 28px;
+    border: 1px solid var(--color-grey-7);
+    border-radius: var(--radius-1);
+    color: var(--color-grey-7);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: var(--color-grey-2);
+    cursor: pointer;
+}
+
+.card-btn-2{
+    width: 56px;
+    height: 28px;
+    border: 1px solid var(--color-grey-7);
+    border-radius: var(--radius-1);
+    color: var(--color-grey-7);
+    font-weight: var(--font-weight-1);
+    font-size: 14px;
+    line-height: 17px;
+    background-color: var(--color-grey-2);
+    cursor: pointer;
+}
+
+.card-btn-1:hover{
+    background-color: var(--color-brand-2);
+    border-color: var(--color-brand-2);;
+}
+
+.card-btn-2:hover{
+    background-color: var(--color-brand-2);
+    border-color: var(--color-brand-2);
+}
