@@ -97,6 +97,11 @@
     border-color: var(--color-brand-1);
 }
 
+.section-2-link{
+    text-decoration: none;
+    color: var(--color-grey-7);
+}
+
 .align{
     position: relative;
     bottom: 82px;
