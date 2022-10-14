@@ -12,7 +12,21 @@ body{
 }
 
 .header-div-1-div{
+    max-width: 400px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.5);
+}
 
+.img-user{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 2px solid var(--color-brand-1);
+    object-fit: fill;
 }
 
 .header-user{
@@ -89,10 +103,15 @@ body{
 }
 
 .card-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-grey-7);
     font-weight: var(--font-weight-1);
     font-size: var(--font-size-2);
     line-height: 24px;
-    color: var(--color-grey-7);
     margin-bottom: 21px;
 }
 
@@ -102,6 +121,13 @@ body{
     line-height: 150%;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 27px;
+    min-height: 56px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .card-div{

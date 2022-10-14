@@ -30,14 +30,15 @@
       <section class="section-2 flex-row align-center justify-center">
         <div class="section-wrapper flex-col">
           <h2 class="section-2-title">Procurar por um usuário</h2>
-          <form class="section-2-form flex-col" action="http://127.0.0.1:5500/pages/home/index.html?">
+          <form class="section-2-form flex-col">
             <label class="section-2-label" for="inputName">Usuário github</label>
-            <input class="section-2-input" type="text" name="" id="inputName" placeholder="Digite um usuário do github aqui...">
-            <button onclick="location.href='//127.0.0.1:5500/pages/home/index.html?';" class="section-2-btn button-login section-2-link">Ver usuário Github</button>
+            <input  class="section-2-input" type="text" name="" id="inputName" placeholder="Digite um usuário do github aqui...">
+            <button id="btnLogin" class="section-2-btn button-login section-2-link">Ver usuário Github</button>
           </form>
         </div>
       </section>
     </main>
-    <script src="index.js"></script>
+    <script type="module" src="../../getApi.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

@@ -85,6 +85,7 @@
     text-indent: 13px;
     border-radius: var(--radius-1);
     margin-bottom: 20px;
+    color: var(--color-grey-7);
 }
 
 .section-2-btn{
