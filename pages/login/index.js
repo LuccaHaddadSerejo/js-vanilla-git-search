@@ -9,20 +9,26 @@ function getUser(){
     let inputLogin = document.getElementById('inputName')
     let btnLogin = document.getElementById('btnLogin')
 
-    btnLogin.addEventListener('click', function(event){
+    btnLogin.addEventListener('click', async function(event){
             event.preventDefault()
-            localStorage.setItem('lastSearch', inputLogin.value)
-            window.location.assign('../home/index.html')   
-            if(usersArr.length >= 3){
-                usersArr.pop()
-                usersArr.unshift(inputLogin.value)
-                localStorage.setItem('recentUsers', JSON.stringify(usersArr))
-            }else{
-                usersArr.unshift(inputLogin.value)
-                localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+            try{
+                const baseUrl = 'https://api.github.com/users/'
+                await fetch(`${baseUrl}${inputLogin.value}`)
+                if(usersArr.length >= 3){
+                    usersArr.pop()
+                    usersArr.unshift(inputLogin.value)
+                    localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                }else{
+                    usersArr.unshift(inputLogin.value)
+                    localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                }                  
+    
+                localStorage.setItem('lastSearch', inputLogin.value)
+                window.location.assign('../home/index.html')
+            }catch(error){
+               errorMessage()
+               console.log(error)
             }
-
-                    
     }) 
     return usersArr
 }
@@ -60,8 +66,3 @@ function errorMessage(){
 
     form.append(message)
 }
-
-
-
-
-

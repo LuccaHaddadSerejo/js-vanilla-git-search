@@ -5,7 +5,7 @@ export async function getDataInfo(user){
         const dataJson = await data.json()
         return dataJson
     }catch(error){
-       return error
+       console.log(error)
     }
 }
 
