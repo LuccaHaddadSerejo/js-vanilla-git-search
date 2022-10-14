@@ -1,22 +1,24 @@
-export async function getDataInfo(nome){
+export async function getDataInfo(user){
     try{
         const baseUrl = 'https://api.github.com/users/'
-        const data = await fetch(`${baseUrl}${nome}`)
-        const dataJson = await data.json() 
+        const data = await fetch(`${baseUrl}${user}`)
+        const dataJson = await data.json()
         return dataJson
     }catch(error){
-        console.log(error) 
+       return error
     }
 }
 
 
-export async function getDataRepos(nome){
+export async function getDataRepos(user){
     try{
         const baseUrl = 'https://api.github.com/users/'
-        const data = await fetch(`${baseUrl}${nome}/repos`)
+        const data = await fetch(`${baseUrl}${user}/repos`)
         const dataJson = await data.json() 
         return dataJson
     }catch(error){
-        console.log(error) 
+        return error
     }
 }
+
+

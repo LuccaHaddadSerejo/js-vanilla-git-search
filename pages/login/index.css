@@ -103,7 +103,28 @@
     color: var(--color-grey-7);
 }
 
+.error-message{
+    color: var(--color-brand-1);
+    position: relative;
+    bottom: 49px;
+}
+
+.align-button{
+    position: relative;
+    top: 30px;
+}
+
 .align{
     position: relative;
     bottom: 82px;
+}
+
+.img-user{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 2px solid var(--color-brand-1);
+    object-fit: fill;
+    position: relative;
+    bottom: 13px;
 }

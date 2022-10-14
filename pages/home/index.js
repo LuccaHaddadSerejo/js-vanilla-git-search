@@ -1,5 +1,7 @@
 import { getDataRepos, getDataInfo } from "../../getApi.js"
 
+
+
 function createHeader(user){
     const headerDiv = document.querySelector('.header-div-1')
     const userImg = document.createElement('img') 
@@ -28,7 +30,7 @@ function createHeader(user){
 
 function createMain(userRepo){
     let fullUl = document.querySelector('.list-full')
-    console.log(userRepo)
+
     userRepo.forEach(element => {
         const card = document.createElement('li')
         const cardTitle = document.createElement('h2')
@@ -68,50 +70,28 @@ function createMain(userRepo){
     return fullUl
 }
 
-export async function requestApiInfo(){
-    let teste = localStorage.getItem('lastSearch')
-    let api = await getDataInfo(teste)
-    renderHeader(api)
-}
-
-export async function requestApiRepos(){
-    let teste = localStorage.getItem('lastSearch')
-    let api = await getDataRepos(teste)
-    renderMain(api)
-}
-
-
-
-export async function renderMain(data){
+function renderMain(data){
     let main = document.getElementById('mainPrincipal')    
     return main.append(createMain(data))       
 }
 
-export async function renderHeader(data){
-    let header = document.getElementById('getHead')    
+function renderHeader(data){
+    let header = document.getElementById('head')    
     return header.append(createHeader(data))       
+}
+
+export async function requestApiInfo(){
+    let getSearch = localStorage.getItem('lastSearch')
+    let dataAPI = await getDataInfo(getSearch)
+    renderHeader(dataAPI)
+}
+
+export async function requestApiRepos(){
+    let getSearch = localStorage.getItem('lastSearch')
+    let dataAPI = await getDataRepos(getSearch)
+    renderMain(dataAPI)
 }
 
 requestApiInfo()
 requestApiRepos()
 
-
-
-
-
-
-// async function renderMain(baseUrl, user){
-//     let main = document.getElementById('mainPrincipal')
-//     let getUserData = await getData(`${baseUrl}${user}/repos`)       
-//     return main.append(createMain(getUserData))       
-// }
-
-// export async function renderHeader(baseUrl, user){
-//     let header = document.getElementById('getHead')
-//     let getUserData = await getData(`${baseUrl}${user}`)       
-//     return header.append(createHeader(getUserData))       
-// }
-
-// renderHeader('https://api.github.com/users/', 'samuelleao')
-
-// renderMain('https://api.github.com/users/', 'samuelleao')
