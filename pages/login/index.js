@@ -30,6 +30,14 @@ function getUser(){
                 const baseUrl = 'https://api.github.com/users/'
                 let data = await fetch(`${baseUrl}${inputLogin.value}`)
                 if(data.status != 404){
+                    if(usersArr.length >= 3){
+                        usersArr.pop()
+                        usersArr.unshift(inputLogin.value)
+                        localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                    }else{
+                        usersArr.unshift(inputLogin.value)
+                        localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                    } 
                     localStorage.setItem('lastSearch', inputLogin.value)
                     window.location.replace('../home/index.html')
                 }else{
@@ -38,14 +46,6 @@ function getUser(){
                     btnLogin.innerText = 'Ver usuário Github'
                 }
 
-                if(usersArr.length >= 3){
-                    usersArr.pop()
-                    usersArr.unshift(inputLogin.value)
-                    localStorage.setItem('recentUsers', JSON.stringify(usersArr))
-                }else{
-                    usersArr.unshift(inputLogin.value)
-                    localStorage.setItem('recentUsers', JSON.stringify(usersArr))
-                } 
             }catch(error){
                 console.log(error)               
             }
