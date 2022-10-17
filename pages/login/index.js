@@ -1,5 +1,5 @@
 import { getDataInfo } from "../../getApi.js"
-
+// import {} from "./assets/spinner.svg"
 
 let usersArr = []
 
@@ -22,7 +22,7 @@ function getUser(){
         inputLogin.innerText = ''
         
         const spinnerImg = document.createElement('img')
-        spinnerImg.src = './assets/spinner.svg'
+        spinnerImg.src = './pages/login/assets/spinner.svg'
         spinnerImg.classList.add('loading')
         btnLogin.appendChild(spinnerImg)
 
@@ -39,7 +39,7 @@ function getUser(){
                         localStorage.setItem('recentUsers', JSON.stringify(usersArr))
                     } 
                     localStorage.setItem('lastSearch', inputLogin.value)
-                    window.location.replace('../home/index.html')
+                    window.location.replace('../../pages/home/index.html')  
                 }else{
                     errorMessage()
                     btnLogin.innerHTML= ''
@@ -78,7 +78,7 @@ async function renderRecentUsers(){
             event.preventDefault()
      
             localStorage.setItem('lastSearch', getSearch[i])
-            window.location.assign('../home/index.html')   
+            window.location.replace('../../pages/home/index.html')   
         })
 
         buttonUsers.addEventListener("mouseover", function(event){
