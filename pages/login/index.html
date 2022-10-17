@@ -14,7 +14,7 @@
   </head>
   <body>
     <main class="main flex-row align-center justify-center">
-      <section class="section-1 flex-row align-center justify-center">
+      <section id="sectionOne" class="section-1 flex-row align-center justify-center">
         <div class="section-wrapper align flex-col justify-center align-start">
           <h1 class="section-1-title">Git Search</h1>
           <p class="section-1-p">Encontre e se conecte com profissionais de forma rápida e fácil</p>
@@ -31,7 +31,8 @@
           <form id="formLogin" class="section-2-form flex-col">
             <label class="section-2-label" for="inputName">Usuário github</label>
             <input class="section-2-input" type="text" name="" id="inputName" placeholder="Digite um usuário do github aqui...">
-            <button id="btnLogin" class="section-2-btn button-login">Ver usuário Github</button>
+            <span class="hidden error-message">Usuário não encontrado!</span>
+            <button id="btnLogin" disabled="true" class="section-2-btn button-login">Ver usuário Github</button>
           </form>
         </div>
       </section>

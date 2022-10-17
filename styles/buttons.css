@@ -4,6 +4,10 @@
     padding: 10px 93px;
     border: 1px solid transparent;
     border-radius: var(--radius-1);
+    background-color: rgba(214, 51, 108, 0.4);;
+}
+
+.button-login-active{
     background-color: var(--color-brand-2);
 }
 

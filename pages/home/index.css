@@ -7,6 +7,10 @@ body{
     margin-bottom: 100px;
 }
 
+.header-div-full{
+    width: 100%;
+}
+
 .header-div-1{
     gap: 20px;
 }
@@ -78,6 +82,11 @@ body{
 .header-btn-2:hover{
     background-color: var(--color-brand-2);
     border-color: var(--color-brand-2);
+}
+
+.header-email-link{
+    color: inherit;
+    text-decoration: none;
 }
     
 .main{

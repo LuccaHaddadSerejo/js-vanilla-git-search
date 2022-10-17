@@ -1,34 +1,50 @@
 import { getDataRepos, getDataInfo } from "../../getApi.js"
 
 
-
-function createHeader(user){
+export function createHeader(user){
+    const header = document.createElement('div')
     const headerDiv = document.querySelector('.header-div-1')
     const userImg = document.createElement('img') 
     const divInfo = document.createElement('div')
     const userName = document.createElement('h2')
     const userBio = document.createElement('span')
+    const headerDivTwo = document.querySelector('.header-div-2')
+    const headerBtnOne = document.createElement('button')
+    const headerBtnOneLink = document.createElement('a')
+    // const headerBtnTwo = document.createElement('button')
 
-
+    header.classList = 'flex-row align-center justify-between header-div-full'
     headerDiv.classList = "header-div-1 flex-row align-center"
     userImg.classList = 'img-user'
     divInfo.classList = 'header-div-1-div'
     userName.classList = "header-user"
     userBio.classList = 'header-job'
-    
+    headerBtnOne.classList = 'header-btn-1'
+    // headerBtnTwo.classList = 'header-btn-2'
+    headerBtnOneLink.classList = 'header-email-link'
+
+
+    // headerBtnTwo.addEventListener('click', ()=>{
+    // window.location.assign('../home/login.html')
+    // })
 
     userImg.src = user.avatar_url
     userName.innerText = user.name
     userBio.innerText = user.bio
-
+    // headerBtnTwo.innerText = 'Trocar de usuário' 
+    headerBtnOneLink.innerText = 'Email'
+    headerBtnOneLink.href = `mailto:${user.email}`
+  
     divInfo.append(userName, userBio)
     headerDiv.append(userImg, divInfo)
+    headerBtnOne.append(headerBtnOneLink)
+    headerDivTwo.append(headerBtnOne)
+    header.append(headerDiv, headerDivTwo)
 
-
-    return headerDiv
+    return header
 }
 
-function createMain(userRepo){
+export function createMain(userRepo){
     let fullUl = document.querySelector('.list-full')
 
     userRepo.forEach(element => {
@@ -70,12 +86,12 @@ function createMain(userRepo){
     return fullUl
 }
 
-function renderMain(data){
+export function renderMain(data){
     let main = document.getElementById('mainPrincipal')    
     return main.append(createMain(data))       
 }
 
-function renderHeader(data){
+export function renderHeader(data){
     let header = document.getElementById('head')    
     return header.append(createHeader(data))       
 }
