@@ -11,6 +11,7 @@ export function createHeader(user){
     const headerDivTwo = document.querySelector('.header-div-2')
     const headerBtnOne = document.createElement('button')
     const headerBtnOneLink = document.createElement('a')
+    const headerBtnTwo = document.querySelector('.header-btn-2')
    
 
     header.classList = 'flex-row align-center justify-between header-div-full'
@@ -23,7 +24,9 @@ export function createHeader(user){
     headerBtnOneLink.classList = 'header-email-link'
 
 
-
+    headerBtnTwo.addEventListener('click', function(){
+        window.location.replace('../../index.html')
+    })
 
     userImg.src = user.avatar_url
     userName.innerText = user.name
@@ -61,7 +64,6 @@ export function createMain(userRepo){
         cardTitle.innerText = element.name
         cardDescription.innerText = element.description
         cardBtnOne.innerText = 'Repositório'
-        
 
         cardBtnOne.setAttribute('onclick', `location.href='${element.html_url}?'`)
 
