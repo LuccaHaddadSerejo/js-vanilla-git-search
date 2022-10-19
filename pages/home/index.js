@@ -1,7 +1,7 @@
-import { getDataRepos, getDataInfo } from "../../getApi.js"
+import { getDataRepos, getDataInfo } from "../../scripts/getApi.js"
 
 
-export function createHeader(user){
+function createHeader(user){
     const header = document.createElement('div')
     const headerDiv = document.querySelector('.header-div-1')
     const userImg = document.createElement('img') 
@@ -43,7 +43,7 @@ export function createHeader(user){
     return header
 }
 
-export function createMain(userRepo){
+function createMain(userRepo){
     let fullUl = document.querySelector('.list-full')
 
     userRepo.forEach(element => {
@@ -84,23 +84,23 @@ export function createMain(userRepo){
     return fullUl
 }
 
-export function renderMain(data){
+function renderMain(data){
     let main = document.getElementById('mainPrincipal')    
     return main.append(createMain(data))       
 }
 
-export function renderHeader(data){
+function renderHeader(data){
     let header = document.getElementById('head')    
     return header.append(createHeader(data))       
 }
 
-export async function requestApiInfo(){
+async function requestApiInfo(){
     let getSearch = localStorage.getItem('lastSearch')
     let dataAPI = await getDataInfo(getSearch)
     renderHeader(dataAPI)
 }
 
-export async function requestApiRepos(){
+async function requestApiRepos(){
     let getSearch = localStorage.getItem('lastSearch')
     let dataAPI = await getDataRepos(getSearch)
     renderMain(dataAPI)
@@ -108,4 +108,5 @@ export async function requestApiRepos(){
 
 requestApiInfo()
 requestApiRepos()
+
 

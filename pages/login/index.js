@@ -1,5 +1,4 @@
-import { getDataInfo } from "../../getApi.js"
-// import {} from "./assets/spinner.svg"
+import { baseUrl, getDataInfo, myHeaders } from "../../scripts/getApi.js"
 
 let usersArr = []
 
@@ -8,6 +7,7 @@ function getUser(){
     usersArr = getSearch
     let inputLogin = document.getElementById('inputName')
     let btnLogin = document.getElementById('btnLogin')
+    let form= document.getElementById('formLogin')
      
     inputLogin.addEventListener('keyup', function(event){
         event.preventDefault()
@@ -16,7 +16,7 @@ function getUser(){
         btnLogin.classList.add('button-login-active')
     })
 
-    btnLogin.addEventListener('click', async function(event){
+   form.addEventListener('submit', async function(event){
         event.preventDefault()
         btnLogin.innerHTML = ''
         inputLogin.innerText = ''
@@ -25,10 +25,11 @@ function getUser(){
         spinnerImg.src = './pages/login/assets/spinner.svg'
         spinnerImg.classList.add('loading')
         btnLogin.appendChild(spinnerImg)
-
             try{
-                const baseUrl = 'https://api.github.com/users/'
-                let data = await fetch(`${baseUrl}${inputLogin.value}`)
+                let data = await fetch(`${baseUrl}${inputLogin.value}`, {
+                    method: 'GET',
+                    headers: myHeaders
+                })
                 if(data.status != 404){
                     if(usersArr.length >= 3){
                         usersArr.pop()
@@ -39,7 +40,7 @@ function getUser(){
                         localStorage.setItem('recentUsers', JSON.stringify(usersArr))
                     } 
                     localStorage.setItem('lastSearch', inputLogin.value)
-                    window.location.replace('../../pages/home/index.html')  
+                    window.location.replace('./pages/home/index.html')
                 }else{
                     errorMessage()
                     btnLogin.innerHTML= ''
