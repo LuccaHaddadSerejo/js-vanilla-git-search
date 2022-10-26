@@ -49,6 +49,12 @@ function getUser(){
                             usersArr.unshift(inputLogin.value)
                             localStorage.setItem('recentUsers', JSON.stringify(usersArr))
                         } 
+                    }else{
+                        let findLastUserIndex = usersArr.indexOf(elt => elt == inputLogin.value)
+                        let findLastUserName = usersArr.find(elt => elt == inputLogin.value)
+                        usersArr.splice(findLastUserIndex, 1)         
+                        usersArr.unshift(findLastUserName)    
+                        localStorage.setItem('recentUsers', JSON.stringify(usersArr))  
                     }
                     localStorage.setItem('lastSearch', inputLogin.value)
                     window.location.replace('./pages/home/index.html')
