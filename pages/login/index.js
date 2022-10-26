@@ -11,15 +11,24 @@ function getUser(){
      
     inputLogin.addEventListener('keyup', function(event){
         event.preventDefault()
-        btnLogin.disabled = false
-        btnLogin.classList.add('section-2-btn-active') 
-        btnLogin.classList.add('button-login-active')
+        const message = document.querySelector('.error-message')
+        if(inputLogin.value.length > 0){
+            btnLogin.disabled = false  
+            message.classList.add('hidden')
+            inputLogin.classList.remove('border_error')
+            btnLogin.classList.add('section-2-btn-active') 
+            btnLogin.classList.add('button-login-active')
+        }else{
+            btnLogin.disabled = true
+            btnLogin.classList.remove('section-2-btn-active') 
+            btnLogin.classList.remove('button-login-active')
+        }     
     })
 
    form.addEventListener('submit', async function(event){
         event.preventDefault()
         btnLogin.innerHTML = ''
-        inputLogin.innerText = ''
+   
         
         const spinnerImg = document.createElement('img')
         spinnerImg.src = './pages/login/assets/spinner.svg'
@@ -31,19 +40,21 @@ function getUser(){
                     headers: myHeaders
                 })
                 if(data.status != 404){
-                    if(usersArr.length >= 3){
-                        usersArr.pop()
-                        usersArr.unshift(inputLogin.value)
-                        localStorage.setItem('recentUsers', JSON.stringify(usersArr))
-                    }else{
-                        usersArr.unshift(inputLogin.value)
-                        localStorage.setItem('recentUsers', JSON.stringify(usersArr))
-                    } 
+                    if(usersArr.filter(elt => elt == inputLogin.value).length == 0){
+                        if(usersArr.length >= 3){
+                            usersArr.pop()
+                            usersArr.unshift(inputLogin.value)
+                            localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                        }else{
+                            usersArr.unshift(inputLogin.value)
+                            localStorage.setItem('recentUsers', JSON.stringify(usersArr))
+                        } 
+                    }
                     localStorage.setItem('lastSearch', inputLogin.value)
                     window.location.replace('./pages/home/index.html')
                 }else{
                     errorMessage()
-                    btnLogin.innerHTML= ''
+                    inputLogin.value = ''
                     btnLogin.innerText = 'Ver usuário Github'
                 }
 
@@ -102,8 +113,8 @@ renderRecentUsers()
 
 function errorMessage(){
     const message = document.querySelector('.error-message')
-    console.log(message)
+    const inputLogin = document.getElementById('inputName')
     message.classList.remove('hidden')
+    inputLogin.classList.add('border_error')
 }
-
 
